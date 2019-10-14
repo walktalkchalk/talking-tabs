@@ -10,6 +10,8 @@
     <style>
       body {
         background-color: rgb(238, 238, 238);
+        min-width: 300px;
+        min-height: 200px;
       }
       .logo-container {
         position: fixed;
@@ -22,8 +24,8 @@
         align-items: center;
       }
       .logo {
-        height: 250px;
-        width: 250px;
+        height: 125px;
+        width: 125px;
         background-image: url('512.png');
         background-repeat: no-repeat;
         background-size: 100%;
@@ -32,11 +34,15 @@
   </head>
 
   <body>
-    <noscript> You need to enable JavaScript to run this app. </noscript>
     <div id="root">
       <div class="logo-container">
         <div class="logo"></div>
       </div>
     </div>
+    <noscript>
+      <div>
+        There was some difficulty in loading Talking Tabs. Please ensure you have Javascript enabled.
+      </div>
+  </noscript>
   </body>
 </html>
