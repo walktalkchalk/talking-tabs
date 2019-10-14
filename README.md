@@ -1,3 +1,24 @@
+## Getting started 
+
+You will need yarn or npm installed. 
+
+In the project directory, run: 
+
+```
+yarn install 
+yarn build
+```
+
+This will create a build folder within the repository. 
+
+Go to Google Chrome extensions: `chrome://extensions/`
+
+Click "Load Unpacked" and select the build folder of this repository from the dialog box. 
+
+Using the "Details" button, you can enable the extension on Incognito mode as well. When you make a change, you'll need to run the build again and click the reload icon in chrome extensions. 
+
+---------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
