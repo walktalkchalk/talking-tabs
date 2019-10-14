@@ -3,8 +3,7 @@ import React from 'react';
 import { Button, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faVolumeMute } from '@fortawesome/free-solid-svg-icons'
-import { faVolumeUp } from '@fortawesome/free-solid-svg-icons'
+import { faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons'
 
 const useStyles = makeStyles(() => ({
   container: {
