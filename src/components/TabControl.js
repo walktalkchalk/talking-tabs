@@ -3,9 +3,7 @@ import React from 'react';
 import { Button, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faVolumeMute } from '@fortawesome/free-solid-svg-icons'
-
-import theme from '../constants/theme';
+import { faVolumeMute, faVolumeUp } from '@fortawesome/free-solid-svg-icons'
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -45,7 +43,7 @@ const TabControl = ({ tab }) => {
         }}
       >
         <FontAwesomeIcon
-          icon={faVolumeMute}
+          icon={tab.tab.mutedInfo.muted ? faVolumeMute: faVolumeUp}
           color={tab.tab.mutedInfo.muted ? 'red' : 'black'}
         />
       </IconButton>
