@@ -26,7 +26,6 @@ const useStyles = makeStyles(() => ({
     }
   },
   container: {
-    overflow: "scroll",
     maxHeight: "250px",
     overflowX: "hidden"
   }
