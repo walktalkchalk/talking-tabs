@@ -1,30 +1,36 @@
 /*global chrome*/
-import React from 'react';
-import { Button, IconButton } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faVolumeMute } from '@fortawesome/free-solid-svg-icons'
+import React from "react";
+import { Button, IconButton } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faVolumeMute } from "@fortawesome/free-solid-svg-icons";
 
-import theme from '../constants/theme';
+import theme from "../constants/theme";
 
 const useStyles = makeStyles(() => ({
   container: {
-    maxWidth: '300px'
+    maxWidth: "300px"
   },
   button: {
-    borderRadius: '0',
-    fontWeight: 'normal',
-    justifyContent: 'start',
-    textAlign: 'left',
-    textTransform: 'none',
-    width: '250px',
-    padding: '4px',
-    '&:hover': {
-      background: 'none'
+    borderRadius: "0",
+    color: "white",
+    fontWeight: "500",
+    justifyContent: "start",
+    textAlign: "left",
+    textTransform: "none",
+    width: "250px",
+    padding: "4px",
+    "&:hover": {
+      background: "none"
     }
   },
-  muteButton: {
-    margin: '0px',
+  unmutedButton: {
+    "& svg": {
+      color: "rgb(56, 150, 78)"
+    }
+  },
+  mutedButton: {
+    color: "rgb(120,120,120)"
   }
 }));
 
@@ -32,21 +38,24 @@ const TabControl = ({ tab }) => {
   const classes = useStyles();
 
   return (
-    <div
-      className={classes.container}
-    >
+    <div className={classes.container}>
       <IconButton
+        mxy={0}
         aria-label="mute"
         size="small"
-        className={classes.muteButton}
+        className={
+          tab.tab.mutedInfo.muted ? classes.mutedButton : classes.unmutedButton
+        }
         onClick={() => {
-          const isTabMuted = tab.tab.mutedInfo.muted
-          chrome.tabs.update(tab.tab.id, {muted: !isTabMuted});
+          const isTabMuted = tab.tab.mutedInfo.muted;
+          chrome.tabs.update(tab.tab.id, { muted: !isTabMuted });
         }}
       >
         <FontAwesomeIcon
           icon={faVolumeMute}
-          color={tab.tab.mutedInfo.muted ? 'red' : 'black'}
+          // color={
+          //   tab.tab.mutedInfo.muted ? "rgb(120,120,120)" : "rgb(56, 150, 78)"
+          // }
         />
       </IconButton>
       <Button
@@ -56,8 +65,8 @@ const TabControl = ({ tab }) => {
         // and setting the selected option in this component's state for styling purposes,
         // respectively
         onClick={() => {
-          chrome.windows.update(tab.windowId, {focused: true});
-          chrome.tabs.update(tab.tab.id, {selected: true});
+          chrome.windows.update(tab.windowId, { focused: true });
+          chrome.tabs.update(tab.tab.id, { selected: true });
           window.close();
         }}
       >
@@ -65,6 +74,6 @@ const TabControl = ({ tab }) => {
       </Button>
     </div>
   );
-}
+};
 
 export default TabControl;

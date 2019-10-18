@@ -1,24 +1,34 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 
-import TabControl from './TabControl'
+import TabControl from "./TabControl";
 
-import theme from '../constants/theme';
+import theme from "../constants/theme";
 
 const useStyles = makeStyles(() => ({
   list: {
-    paddingLeft: '0'
+    padding: "0px",
+    margin: "0"
   },
   listItem: {
-    fontSize: '14px',
-    width: '100%',
-    '&:hover': {
-      background: theme.palette.primary.secondary
+    fontSize: "14px",
+    width: "100%",
+    padding: "3px 0px",
+    fontWeight: "500",
+    "&:hover": {
+      background: "linear-gradient(45deg, rgb(56, 150, 78),rgb(150, 200, 102))",
+      "& svg": {
+        color: "white"
+      }
+    },
+    "&:not(:last-child)": {
+      borderBottom: "1px solid rgb(100,100,100)"
     }
   },
   container: {
-    overflow: 'scroll',
-    height: `${window.innerHeight - 113}px`
+    overflow: "scroll",
+    maxHeight: "250px",
+    overflowX: "hidden"
   }
 }));
 
@@ -29,19 +39,15 @@ const TabList = ({ tabList }) => {
     <>
       <div className={classes.container}>
         <ul className={classes.list}>
-          {tabList.map((tab) => (
-            <li
-              className={classes.listItem}
-            >
-              <TabControl
-                tab={tab}
-              />
+          {tabList.map(tab => (
+            <li className={classes.listItem}>
+              <TabControl tab={tab} />
             </li>
           ))}
         </ul>
       </div>
     </>
   );
-}
+};
 
 export default TabList;
