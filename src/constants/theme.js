@@ -4,22 +4,24 @@ const theme = createMuiTheme({
   shadows: Array(25).fill('none'),
   palette: {
     primary: {
-      main: '#D40F76',
-      secondary: '#D3F3FB'
+      main: '#F5BC41',//'#FFCF00',
+      secondary: '#F7CE46'
     },
     secondary: {
       main: '#000000',
       secondary: '#FFFFFF'
     },
-    background: '#000000',
+    background: '#FFFFFF',
     grays: {
       lighter: '#F7F7F7',
-      mediumLighter: '#DADADA',
+      light: '#DADADA',
+      mediumLighter: '#CBCBCB',
       mediumLight: '#848484',
       medium: '#626262',
-      light: '#CBCBCB',
       dark: '#000000'
     },
+    red: '#FF0000',
+    white: '#FFFFFF',
     border: '#E6E6E6',
     borderLight: '#CBCBCB',
     transparent: 'transparent'

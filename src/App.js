@@ -1,34 +1,30 @@
 /*global chrome*/
 import React, { useEffect, useState} from 'react';
-import TabList from './components/TabList';
-import Header from './components/Header';
-import './App.css';
 import { makeStyles } from '@material-ui/core/styles';
+import ThumbUp from '@material-ui/icons/ThumbUp'
+
+import Header from './components/Header';
+import NoTabsFound from './components/NoTabsFound';
+import TabList from './components/TabList';
 
 import theme from './constants/theme';
 
 const useStyles = makeStyles(() => ({
   root: {
-    background: theme.palette.grays.light,
+    background: theme.palette.background,
     color: theme.palette.grays.dark,
-    textTransform: 'none',
-    whiteSpace: 'nowrap',
-    opacity: '0.6',
+    display: 'flex',
+    flexDirection: 'column',
     fontSize: '0.875em',
     fontWeight: 400,
-    '&$selected': {
-      borderTop: `solid 3px ${theme.palette.transparent}`,
-      paddingTop: 3,
-      borderBottom: 'none',
-      color: theme.palette.grays.dark,
-      background: theme.palette.secondary.secondary,
-      opacity: '1'
-    }
+    textTransform: 'none',
+    whiteSpace: 'nowrap',
+    width: '350px',
   },
 }));
 
 
-function App() {
+const App = () => {
   const classes = useStyles();
   const [tabList, setTabList] = useState([]);
 
@@ -42,7 +38,7 @@ function App() {
               tab,
               windowId: window.id
             });
-          }
+          };
         });
       });
       setTabList(tabs);
@@ -55,9 +51,13 @@ function App() {
         <Header
           tabList={tabList}
         />
-        <TabList 
-          tabList={tabList}
-        />
+        { tabList.length > 0 ? (
+          <TabList 
+            tabList={tabList}
+          />
+        ) : (
+          <NoTabsFound />
+        )}
       </header>
     </div>
   );

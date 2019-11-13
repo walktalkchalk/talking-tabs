@@ -13,12 +13,12 @@ const useStyles = makeStyles(() => ({
     fontSize: '14px',
     width: '100%',
     '&:hover': {
-      background: theme.palette.primary.secondary
+      background: theme.palette.grays.lighter
     }
   },
   container: {
     overflow: 'scroll',
-    height: `${window.innerHeight - 113}px`
+    height: `100%`
   }
 }));
 
