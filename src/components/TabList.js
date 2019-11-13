@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
   list: {
     margin: '0px',
     paddingLeft: '0',
-    maxHeight: '30em',
+    maxHeight: '500px',
   },
   listItem: {
     fontSize: '14px',

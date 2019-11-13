@@ -1,13 +1,13 @@
 /*global chrome*/
 import React, { useEffect, useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import ThumbUp from '@material-ui/icons/ThumbUp'
 
 import Header from './components/Header';
 import NoTabsFound from './components/NoTabsFound';
 import TabList from './components/TabList';
 
 import theme from './constants/theme';
+import Footer from './components/Footer';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -55,7 +55,10 @@ const App = () => {
           tabList={tabList}
         />
       ) : (
-        <NoTabsFound />
+        <>
+          <NoTabsFound />
+          <Footer />
+        </>
       )}
     </main>
   );

@@ -10,7 +10,7 @@ import theme from '../constants/theme';
 const useStyles = makeStyles(() => ({
   header: {
     background: theme.palette.primary.main,
-    color: '#FFFFFF',
+    color: theme.palette.white,
     display: 'flex',
     width: '100%',
   },
@@ -24,14 +24,14 @@ const useStyles = makeStyles(() => ({
   },
   buttonContent: {
     alignItems: 'center',
-    color: '#FFFFFF',
+    color: theme.palette.white,
     display: 'flex',
     flexDirection: 'column',
   },
   buttonIcon: {
     fontSize: '34px',
     padding: '0px 5px',
-  }
+  },
 }));
 
 const Header = ({ tabList }) => {
