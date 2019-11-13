@@ -7,17 +7,15 @@ import theme from '../constants/theme';
 
 const useStyles = makeStyles(() => ({
   container: {
-    flexGrow: 1,
-    width: '100%',
-  },
-  notice: {
     alignContent: 'center',
     alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
-    flexGrow: 1,
+    padding: '2.5em 0em',
+    width: '100%',
   },
   icon: {
+    color: theme.palette.primary.main,
     fontSize: '50px',
     padding: '0px 5px',
   },
@@ -35,17 +33,15 @@ const NoTabsFound = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
-      <div className={classes.notice}>
-        <ThumbUp className={classes.icon} />
-        <div className={classes.title}>
-          No Talking Tabs Found
-        </div>
-        <div className={classes.text}>
-          Check other apps for current sound
-        </div>
-      </div>
-    </div>
+    <section className={classes.container}>
+      <ThumbUp className={classes.icon} />
+      <h1 className={classes.title}>
+        No Talking Tabs Found
+      </h1>
+      <h2 className={classes.text}>
+        Check other apps for current sound
+      </h2>
+    </section>
   );
 }
 

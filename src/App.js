@@ -46,20 +46,18 @@ const App = () => {
   })
 
   return (
-    <div className="App">
-      <header className={classes.root}>
-        <Header
+    <main className={classes.root}>
+      <Header
+        tabList={tabList}
+      />
+      { tabList.length > 0 ? (
+        <TabList 
           tabList={tabList}
         />
-        { tabList.length > 0 ? (
-          <TabList 
-            tabList={tabList}
-          />
-        ) : (
-          <NoTabsFound />
-        )}
-      </header>
-    </div>
+      ) : (
+        <NoTabsFound />
+      )}
+    </main>
   );
 }
 

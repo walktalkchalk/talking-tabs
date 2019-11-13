@@ -74,7 +74,7 @@ const TabControl = ({ tab }) => {
   }
 
   return (
-    <div className={classes.container}>
+    <section className={classes.container}>
       <img className={classes.favIcon}
         src={tab.tab.favIconUrl}
       />
@@ -90,14 +90,14 @@ const TabControl = ({ tab }) => {
           window.close();
         }}
       >
-        <div className={classes.buttonContent}>
+        <section className={classes.buttonContent}>
           <div className={classes.tabUrl}>
             {getHostName(tab.tab.url)}
           </div>
           <div className={classes.tabTitle}>
             {tab.tab.title}
           </div>
-        </div>
+        </section>
       </Button>
       <IconButton className={classes.muteButton}
         aria-label="mute"
@@ -113,7 +113,7 @@ const TabControl = ({ tab }) => {
           <VolumeUp className={classes.unmutedIcon} />
         )}
       </IconButton>
-    </div>
+    </section>
   );
 }
 
